@@ -54,3 +54,30 @@
 .thumbnail-inner {
   padding: 20px 4px 4px;
 }
+
+.margin-bottom-15 {
+  margin-bottom: 15px;
+}
+
+.margin-left {
+  margin-left: 10px;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.float-right {
+  float: right;
+}
+
+.margin-bottom-30 {
+  margin-bottom: 30px;
+}
+
+.gi-1-7x{font-size: 1.5em;}
+.gi-2x{font-size: 2em;}
+.gi-3x{font-size: 3em;}
+.gi-4x{font-size: 4em;}
+.gi-5x{font-size: 5em;}
+
