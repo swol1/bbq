@@ -37,7 +37,7 @@
         </div>
         <div class="col-sm-4 col-sm-offset-4 <%= 'has-error' if @user.errors[:name].any? %> ">
           <%= f.text_field :name, class: "form-control", autofocus: true,
-                            autocomplete: "name", placeholder: "Имя" %>
+                           autocomplete: "name", placeholder: "Имя" %>
         </div>
       </div>
     </div>
@@ -68,8 +68,9 @@
 
     <div class="form-group-lg">
       <div class="row">
-        <div class="col-sm-3 col-sm-offset-4">
+        <div class="col-sm-4 col-sm-offset-4">
           <%= f.submit "Готово", class: "btn btn-default btn-lg" %>
+          <div class="pull-right margin-right-50 margin-top-10"> <%= render "devise/shared/links" %> </div>
         </div>
       </div>
     </div>
