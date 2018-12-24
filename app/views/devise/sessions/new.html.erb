@@ -1,38 +1,47 @@
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="container">
-    <div class="margin-bottom-30">
-      <h2 class="text-center">Войти</h2>
-    </div>
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="row">
+    <div class="col-xs-10 col-sm-6 col-md-5 col-xs-offset-1 col-sm-offset-4">
 
-    <div class="form-group-lg margin-bottom-15">
       <div class="row">
-        <div class="col-sm-4 pull-right margin-top-10">
-          <span class="glyphicon glyphicon-envelope gi-1-7x" aria-hidden="true"></span>
-        </div>
-        <div class="col-sm-4 col-sm-offset-4">
-          <%= f.email_field :email, class: "form-control", autofocus: true,
-                            autocomplete: "email", placeholder: "Email" %>
+        <div class="col-xs-10 margin-bottom-25">
+          <h2 class="text-center">Вход</h2>
         </div>
       </div>
-    </div>
 
-    <div class="form-group-lg margin-bottom-15">
-      <div class="row">
-        <div class="col-sm-4 pull-right margin-top-10">
-          <span class="glyphicon glyphicon-lock gi-1-7x" aria-hidden="true"></span>
-        </div>
-        <div class="col-sm-4 col-sm-offset-4">
-          <%= f.password_field :password, class: "form-control",
-                               autocomplete: "current-password", placeholder: "Пароль" %>
+      <div class="form-group-lg">
+        <div class="row">
+          <div class="col-xs-10">
+            <%= f.input :email, label: false, class: "form-control", autofocus: true,
+                        autocomplete: "email", placeholder: "Email" %>
+          </div>
+          <span class="margin-top-10 glyphicon glyphicon-envelope gi-1-7x" aria-hidden="true"></span>
         </div>
       </div>
-    </div>
 
-    <div class="form-group-lg">
+      <div class="form-group-lg">
+        <div class="row">
+          <div class="col-xs-10">
+            <%= f.input :password, label: false, class: "form-control", autocomplete: "current-password",
+                        placeholder: "Пароль" %>
+          </div>
+          <span class="margin-top-10 glyphicon glyphicon-lock gi-1-7x" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="form-group-lg margin-bottom-5">
+        <div class="row">
+          <div class="col-xs-10">
+            <%= f.button :submit, "Войти", class: "btn-default btn-lg" %>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
-        <div class="col-sm-4 col-sm-offset-4">
-          <%= f.submit "Готово", class: "btn btn-default btn-lg" %>
-          <div class="pull-right"> <%= render "devise/shared/links" %> </div>
+        <div class="col-xs-10">
+          <%= link_to 'Зарегистрироваться', new_user_registration_url %>
+          <div>
+            <%= link_to 'Забыли пароль?', new_user_password_url %>
+          </div>
         </div>
       </div>
     </div>

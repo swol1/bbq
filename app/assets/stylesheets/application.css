@@ -55,8 +55,16 @@
   padding: 20px 4px 4px;
 }
 
-.margin-bottom-15 {
-  margin-bottom: 15px;
+.margin-bottom-25 {
+  margin-bottom: 25px;
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.margin-bottom-5 {
+  margin-bottom: 5px;
 }
 
 .margin-left {
@@ -75,8 +83,8 @@
   float: right;
 }
 
-.margin-bottom-30 {
-  margin-bottom: 30px;
+.content-center {
+  justify-content: center;
 }
 
 .gi-1-7x{font-size: 1.5em;}

@@ -1,76 +1,65 @@
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <div class="container">
-    <div class="margin-bottom-30">
-      <h2 class="text-center">Регистрация</h2>
-    </div>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-    <% if @user.errors.any? %>
+  <div class="row">
+    <div class="col-xs-10 col-sm-6 col-md-5 col-xs-offset-1 col-sm-offset-4">
+
       <div class="row">
-        <div class="col-sm-4 col-sm-offset-4">
-          <div class="alert alert-danger">
-            <ul>
-              <% @user.errors.full_messages.each do |message| %>
-                <li class="alert-link"><%= message %></li>
-              <% end %>
-            </ul>
+        <div class="col-xs-10 margin-bottom-25">
+          <h2 class="text-center">Регистрация</h2>
+        </div>
+      </div>
+
+      <div class="form-group-lg">
+        <div class="row">
+          <div class="col-xs-10 <%= bootstrap_has_error(resource, :email) %>">
+            <%= f.input :email, label: false, class: "form-control", autofocus: true,
+                        autocomplete: "email", placeholder: "Email" %>
+          </div>
+          <span class="margin-top-10 glyphicon glyphicon-envelope gi-1-7x" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="form-group-lg">
+        <div class="row">
+          <div class="col-xs-10 <%= bootstrap_has_error(resource, :name) %>">
+            <%= f.input :name, label: false, class: "form-control", autofocus: true,
+                        autocomplete: "name", placeholder: "Имя" %>
+          </div>
+          <span class="margin-top-10 glyphicon glyphicon-user gi-1-7x" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="form-group-lg">
+        <div class="row">
+          <div class="col-xs-10 <%= bootstrap_has_error(resource, :password) %>">
+            <%= f.input :password, label: false, class: "form-control",
+                        autocomplete: "current_password", placeholder: "Пароль" %>
+          </div>
+          <span class="margin-top-10 glyphicon glyphicon-lock gi-1-7x" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="form-group-lg">
+        <div class="row">
+          <div class="col-xs-10 <%= bootstrap_has_error(resource, :password_confirmation) %>">
+            <%= f.input :password_confirmation, label: false, class: "form-control",
+                        autocomplete: "current_password", placeholder: "Повторите пароль" %>
+          </div>
+          <span class="margin-top-10 glyphicon glyphicon-lock gi-1-7x" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="form-group-lg margin-bottom-5">
+        <div class="row">
+          <div class="col-xs-10">
+            <%= f.button :submit, "Зарегистрироваться", class: "btn-default btn-lg" %>
           </div>
         </div>
       </div>
-    <% end %>
 
-    <div class="form-group-lg margin-bottom-15">
       <div class="row">
-        <div class="col-sm-4 pull-right margin-top-10">
-          <span class="glyphicon glyphicon-envelope gi-1-7x" aria-hidden="true"></span>
-        </div>
-        <div class="col-sm-4 col-sm-offset-4 has-feedback <%= 'has-error' if @user.errors[:email].any? %>">
-          <%= f.email_field :email, class: "form-control", autofocus: true,
-                            autocomplete: "email", placeholder: "Email" %>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group-lg margin-bottom-15">
-      <div class="row">
-        <div class="col-sm-4 pull-right margin-top-10">
-          <span class="glyphicon glyphicon-user gi-1-7x" aria-hidden="true"></span>
-        </div>
-        <div class="col-sm-4 col-sm-offset-4 <%= 'has-error' if @user.errors[:name].any? %> ">
-          <%= f.text_field :name, class: "form-control", autofocus: true,
-                           autocomplete: "name", placeholder: "Имя" %>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group-lg margin-bottom-15">
-      <div class="row">
-        <div class="col-sm-4 pull-right margin-top-10">
-          <span class="glyphicon glyphicon-lock gi-1-7x" aria-hidden="true"></span>
-        </div>
-        <div class="col-sm-4 col-sm-offset-4 <%= 'has-error' if @user.errors[:password].any? %>">
-          <%= f.password_field :password, class: "form-control",
-                               autocomplete: "off", placeholder: "Пароль" %>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group-lg margin-bottom-15">
-      <div class="row">
-        <div class="col-sm-4 pull-right margin-top-10">
-          <span class="glyphicon glyphicon-lock gi-1-7x" aria-hidden="true"></span>
-        </div>
-        <div class="col-sm-4 col-sm-offset-4 <%= 'has-error' if @user.errors[:password].any? %>">
-          <%= f.password_field :password_confirmation, class: "form-control",
-                               autocomplete: "off", placeholder: "Повторите пароль" %>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group-lg">
-      <div class="row">
-        <div class="col-sm-4 col-sm-offset-4">
-          <%= f.submit "Готово", class: "btn btn-default btn-lg" %>
-          <div class="pull-right margin-right-50 margin-top-10"> <%= render "devise/shared/links" %> </div>
+        <div class="col-xs-10">
+          <%= link_to 'Войти', new_user_session_url %>
         </div>
       </div>
     </div>

@@ -12,6 +12,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 
 gem 'devise'
+gem 'devise-i18n'
+gem 'russian'
+
+gem 'simple_form'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
