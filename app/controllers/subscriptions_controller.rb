@@ -7,7 +7,7 @@ class SubscriptionsController < ApplicationController
     @new_subscription = @event.subscriptions.build(subscription_params)
     @new_subscription.user = current_user
 
-    unless current_user.id == @event.user_id
+    unless user_signed_in? && current_user.id == @event.user_id
       if @new_subscription.save
         redirect_to @event, notice: I18n.t('controllers.subscriptions.created')
       else
