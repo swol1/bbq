@@ -16,4 +16,8 @@ module ApplicationHelper
   def bootstrap_has_error(model, field)
     'has-error' if model.errors[field].present?
   end
+
+  def fa_icon(icon_class)
+    content_tag 'span', '', class: "fa fa-#{icon_class}"
+  end
 end
