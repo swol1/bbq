@@ -3,10 +3,6 @@ class UsersController < ApplicationController
 
   before_action :set_current_user, except: [:show]
 
-
-
-
-
   def show
     @user = User.find(params[:id])
   end
@@ -21,7 +17,6 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-
 
   private
   def set_current_user

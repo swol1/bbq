@@ -23,6 +23,8 @@
 
   <div class="actions">
     <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
+    <%= link_to 'Удалить', @event, method: :delete,
+                class: 'btn btn-danger', data: { confirm: "Точно удалить событие?" } %>
     или <%= link_to 'вернуться', :back %>
   </div>
 <% end %>
