@@ -10,6 +10,7 @@ class Subscription < ApplicationRecord
   validates :user, uniqueness: { scope: :event_id }, if: Proc.new { |u| u.user.present? }
 
   validates :user_email, uniqueness: { scope: :event_id }, unless: Proc.new { |u| u.user.present? }
+  validates :user_email, email_exist: true
 
   def user_name
     if user.present?
