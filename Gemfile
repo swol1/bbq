@@ -17,6 +17,7 @@ gem 'rails-i18n'
 
 gem 'rmagick'
 gem 'carrierwave'
+gem 'fog-aws'
 
 gem 'simple_form'
 
