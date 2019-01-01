@@ -8,8 +8,15 @@
       <div class="caption">
         <div class="event-description">
           <h3><%= link_to event.title, event_path(event) %></h3>
-          <h3><small><%= l event.datetime, format: :short %></small></h3>
+          <h3>
+            <small><%= l event.datetime, format: :short %></small>
+          </h3>
           <div class="buffer-both"><%= event.address %></div>
+        </div>
+        <div>
+          <% event.visitors.each do |user| %>
+            <%= image_tag user_avatar_thumb(user), class: 'img-icon', title: user.name %>
+          <% end %>
         </div>
       </div>
     </div>
