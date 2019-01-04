@@ -1,0 +1,15 @@
+<h1><%= t '.title' %></h1>
+
+<% attachments.inline["#{@image.photo}"] = File.read("#{Rails.root}/public#{@image.photo}") %>
+<%= image_tag attachments["#{@image.photo}"].url %>
+
+<hr/>
+
+<%= t '.event' %>
+<h3><%= @event.title %></h3>
+
+<%= t '.datetime' %>
+<h4><%= l @event.datetime %></h4>
+
+<%= t '.owner' %>
+<h4><%= @event.user.name %></h4>

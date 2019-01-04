@@ -79,6 +79,13 @@ ru:
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+    image:
+      title: 'Новая фотография'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+
 
   error:
     one: '%{count} ошибка'
