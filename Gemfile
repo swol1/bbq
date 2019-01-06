@@ -24,10 +24,12 @@ gem 'simple_form'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :production do
+  gem 'dotenv-rails'
   gem 'pg'
 end
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'listen'
