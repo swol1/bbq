@@ -15,3 +15,4 @@
 //= require_tree .
 //= require jquery
 //= require twitter/bootstrap
+//= require maps.js
