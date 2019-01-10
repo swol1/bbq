@@ -1,6 +1,6 @@
 <h1><%= t '.title' %></h1>
 
-<% attachments.inline["#{@image.photo}"] = open("https://s3-us-east-2.amazonaws.com/letsbbq-bucket/#{@image.photo.url}").read %>
+<% attachments.inline["#{@image.photo}"] = open("https://s3-us-east-2.amazonaws.com/letsbbq-bucket/#{@image.photo}").read %>
 <%= image_tag attachments["#{@image.photo}"].url %>
 
 <hr/>
