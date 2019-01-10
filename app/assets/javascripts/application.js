@@ -15,4 +15,5 @@
 //= require_tree .
 //= require jquery
 //= require twitter/bootstrap
+//= require lightbox
 //= require maps

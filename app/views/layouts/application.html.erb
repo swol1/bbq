@@ -9,6 +9,8 @@
   <link rel="stylesheet"
         href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag "application", :media => "all" %>
@@ -55,5 +57,14 @@
     <p>&copy; <%= t 'app.company' %> 2018</p>
   </footer>
 </div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+
+<script type="text/javascript">
+    $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+</script>
 </body>
 </html>

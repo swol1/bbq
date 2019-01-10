@@ -1,5 +1,5 @@
 <%= form_for [@event, photo], html: { multipart: true } do |f| %>
-  <%= render partial: 'partials/form_errors', locals: {model: photo} %>
+  <%= render partial: 'partials/form_errors', locals: { model: photo } %>
 
   <div class="form-group">
     <%= f.label :photo %>

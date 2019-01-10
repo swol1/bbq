@@ -33,7 +33,7 @@
   <div class="row">
     <div class="col-md-8">
       <div class="event-photos">
-        <div class="event-photos-gallery">
+        <div class="event-photos-gallery row">
           <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
         </div>
 
