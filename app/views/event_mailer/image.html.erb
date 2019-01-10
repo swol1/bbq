@@ -1,6 +1,6 @@
 <h1><%= t '.title' %></h1>
 
-<% attachments.inline["#{@image.photo}"] = File.read("#{Rails.root}/public#{@image.photo}") %>
+<% attachments.inline["#{@image.photo}"] = File.read("#{@image.photo}") %>
 <%= image_tag attachments["#{@image.photo}"].url %>
 
 <hr/>
