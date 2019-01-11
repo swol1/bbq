@@ -42,10 +42,10 @@ class PhotosController < ApplicationController
   end
 
   def notify_subscribers(event, image)
-    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
+    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [current_user.email]).uniq
 
     all_emails.each do |mail|
-      EventMailer.image(event, image, mail).deliver_now unless User.where(id: image.user_id, email: mail).present?
+      EventMailer.image(event, image, mail).deliver_now
     end
   end
 end
