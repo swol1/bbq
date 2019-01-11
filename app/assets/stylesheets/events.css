@@ -39,7 +39,12 @@
 
 .event-info-inner {
   background:rgba(0, 0, 0, 0.4);
-  min-height: 400px;
+  min-height: 200px;
+}
+
+.event-info-inner-min {
+  background:rgba(0, 0, 0, 0.4);
+  min-height: 200px;
 }
 
 .event-map {
