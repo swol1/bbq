@@ -6,10 +6,10 @@
 
       <div class="event-info-inner row">
         <div class="col-md-6">
-          <div class="event-description">
+          <div class="event-description buffer-top-40">
             <h1><%= @event.title %></h1>
             <h3><%= l @event.datetime, format: :short %></h3>
-            <h3>
+            <h3 class="buffer-top-40">
               <small><%= link_to @event.address,
                                  "//yandex.ru/maps/?text=#{@event.address}" %></small>
             </h3>
@@ -17,7 +17,7 @@
           </div>
 
           <% if current_user_can_edit?(@event) %>
-            <div class="buffer-top">
+            <div class="buffer-top-100">
 
               <%= link_to 'Изменить', edit_event_path(@event),
                           class: 'btn btn-primary' %>
@@ -25,6 +25,11 @@
                           class: 'btn btn-danger', data: { confirm: "Точно удалить событие?" } %>
             </div>
           <% end %>
+        </div>
+
+        <div class="col-md-6">
+          <div class="buffer-top event-map" id="map" data-address="<%= @event.address %>">
+          </div>
         </div>
       </div>
     </div>
@@ -78,9 +83,6 @@
           </div>
         </div>
       <% end %>
-
-      <div class="buffer-top" id="map" data-address="<%= @event.address %>" style="width: 100%; height: 350px;">
-      </div>
     </div>
   </div>
 </div>
