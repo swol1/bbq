@@ -14,6 +14,8 @@ gem 'fog-aws'
 
 gem 'jquery-rails'
 
+gem 'rails_admin'
+
 gem 'rails', '~> 5.2.2'
 
 gem 'rails-i18n'
