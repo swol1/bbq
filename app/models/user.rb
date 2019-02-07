@@ -2,15 +2,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :events
-  has_many :comments
+  has_many :events, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :subscriptions
 
-  validates :name, presence: true, length: {maximum: 35}
+  validates :name, presence: true, length: { maximum: 35 }
 
-  before_validation :set_name, on: :create
+  before_validation :set_name, :set_admin, on: :create
 
   mount_uploader :avatar, AvatarUploader
+
+  validates :admin, inclusion: { in: [true, false] }, allow_nil: false
 
   after_commit :link_subscriptions, on: :create
 
@@ -22,5 +24,9 @@ class User < ApplicationRecord
 
   def link_subscriptions
     Subscription.where(user_id: nil, user_email: self.email).update_all(user_id: self.id)
+  end
+
+  def set_admin
+    self.admin = false
   end
 end
