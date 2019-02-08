@@ -16,7 +16,7 @@ Rails.application.configure do
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
-  # config.require_master_key = true
+  config.require_master_key = true
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
@@ -71,7 +71,7 @@ Rails.application.configure do
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
-  config.i18n.fallbacks = true
+  config.i18n.fallbacks = [I18n.default_locale]
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
@@ -91,18 +91,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = { :host => 'emptybox.ru' }
 
-  config.action_mailer.default_url_options = { :host => 'letsbbq.herokuapp.com' }
-
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :sendmail
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.smtp_settings = {
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'heroku.com',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
-  }
 end
