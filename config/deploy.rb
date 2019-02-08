@@ -23,7 +23,7 @@ set :branch, ENV['BRANCH'] if ENV['BRANCH']
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, %w{config/master.key}, "config/database.yml"
+append :linked_files, "config/master.key", "config/database.yml"
 
 # Default value for linked_dirs is []
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
