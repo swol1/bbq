@@ -10,6 +10,8 @@ set :repo_url, "https://github.com/swol1/bbq.git"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/apps/letsbbq"
 
+set :branch, ENV['BRANCH'] if ENV['BRANCH']
+
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -21,7 +23,7 @@ set :deploy_to, "/home/deploy/apps/letsbbq"
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, "config/database.yml"
+append :linked_files, %w{config/master.key}, "config/database.yml"
 
 # Default value for linked_dirs is []
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
