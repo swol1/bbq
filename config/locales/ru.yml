@@ -87,7 +87,10 @@ ru:
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
-
+    registration:
+      title: 'Ура, Вы зарегистрировались на сайте emptybox.ru'
+      name: 'Имя'
+      email: 'Email'
 
   error:
     one: '%{count} ошибка'
