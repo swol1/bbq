@@ -93,7 +93,14 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { :host => 'emptybox.ru' }
-
-  config.action_mailer.delivery_method = :sendmail
   config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.smtp_settings = {
+    :authentication => :plain,
+    :address => "smtp.mailgun.org",
+    :port => 587,
+    :domain => Rails.application.credentials.mailgun[:domain],
+    :user_name => Rails.application.credentials.mailgun[:user_name],
+    :password => Rails.application.credentials.mailgun[:password]
+  }
 end
