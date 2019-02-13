@@ -14,6 +14,9 @@ gem 'fog-aws'
 
 gem 'jquery-rails'
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 gem 'rails_admin'
 
 gem 'rails', '~> 5.2.2'
