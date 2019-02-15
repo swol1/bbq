@@ -16,6 +16,7 @@ gem 'jquery-rails'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-vkontakte'
 
 gem 'rails_admin'
 
