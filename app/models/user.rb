@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :subscriptions
 
   validates :name, presence: true, length: { maximum: 35 }
-  
+
   mount_uploader :avatar, AvatarUploader
 
   validates :admin, inclusion: { in: [true, false] }, allow_nil: false
@@ -15,6 +15,7 @@ class User < ApplicationRecord
   after_commit :link_subscriptions, on: :create
 
   private
+
   def initialize(attrs = {})
     defaults = {
       name: "Товарисч №#{rand(777)}",
