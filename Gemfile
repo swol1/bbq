@@ -38,17 +38,7 @@ group :development, :test do
   gem 'shoulda-matchers', '4.0.0.rc1'
   gem 'rails-controller-testing'
 
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.13'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'listen'
-end
-
-group :development do
-  gem "capistrano", "~> 3.10", require: false
-  gem "capistrano-rails", "~> 1.4", require: false
-  gem 'capistrano-passenger'
-  gem 'capistrano-rbenv', '~> 2.1'
-  gem 'capistrano-bundler', '~> 1.5'
-
-  gem 'letter_opener'
 end
