@@ -8,18 +8,6 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-xs-10">
-          <% if @user.errors.any? %>
-            <div class="alert alert-danger">
-              <div class="lead buffer-bottom">
-                В вашей форме <%= I18n.t :error, count: @user.errors.count %>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
-
       <div class="form-group-lg">
         <div class="row">
           <div class="col-xs-10 <%= bootstrap_has_error(resource, :email) %>">

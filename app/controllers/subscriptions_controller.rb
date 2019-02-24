@@ -7,12 +7,14 @@ class SubscriptionsController < ApplicationController
     @new_subscription = @event.subscriptions.build(subscription_params)
     @new_subscription.user = current_user
 
-    if @new_subscription.save
-      EventMailer.subscription(@event, @new_subscription).deliver_now
+    unless user_signed_in? && current_user.id == @event.user_id
+      if @new_subscription.save
+        EventMailer.subscription(@event, @new_subscription).deliver_now
 
-      redirect_to @event, notice: I18n.t('controllers.subscriptions.created')
-    else
-      render 'events/show', alert: I18n.t('controllers.subscriptions.error')
+        redirect_to @event, notice: I18n.t('controllers.subscriptions.created')
+      else
+        render 'events/show', alert: I18n.t('controllers.subscriptions.error')
+      end
     end
   end
 

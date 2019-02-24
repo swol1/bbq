@@ -73,7 +73,8 @@
         </div>
       </div>
 
-      <% unless user_signed_in? && current_user.id == @event.user_id %>
+      <% unless user_signed_in? && current_user.id == @event.user_id ||
+          user_signed_in? && has_this_event_subscription? %>
         <div class="event-subscription-form">
           <h4>Я пойду:</h4>
           <div>

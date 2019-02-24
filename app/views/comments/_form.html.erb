@@ -1,19 +1,17 @@
-<%= form_for [@event, comment] do |f| %>
-    <%= render partial: 'partials/form_errors', locals: {model: comment} %>
+<%= simple_form_for [@event, comment] do |f| %>
+  <div class="form-group <%= bootstrap_has_error(comment, :body) %>">
+    <%= f.label :body %>
+    <%= f.input :body, as: :text, label: false, class: "form-control", autofocus: true,
+                autocomplete: "body", placeholder: "Комментарий" %>
+  </div>
 
-    <div class="form-group">
-      <%= f.label :body %>
-      <%= f.text_area :body, class: 'form-control' %>
-    </div>
+  <div class="form-group <%= bootstrap_has_error(comment, :user_name) %>">
+    <%= f.label :user_name %>
+    <%= f.input :user_name, label: false, class: "form-control", autofocus: true,
+                autocomplete: "user_name", placeholder: "Имя" %>
+  </div>
 
-    <% unless user_signed_in? %>
-        <div class="form-group">
-          <%= f.label :user_name %>
-          <%= f.text_field :user_name, class: 'form-control' %>
-        </div>
-    <% end %>
-
-    <div class="actions">
-      <%= f.submit 'Отправить', class: 'btn btn-primary' %>
-    </div>
+  <div class="actions">
+    <%= f.submit 'Отправить', class: 'btn btn-primary' %>
+  </div>
 <% end %>
