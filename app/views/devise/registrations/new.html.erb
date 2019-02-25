@@ -61,6 +61,15 @@
           <%= link_to 'Войти', new_user_session_url %>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-xs-10">
+          <%- resource_class.omniauth_providers.each do |provider| %>
+            <%= link_to "Войти через #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %>
+            <br/>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 <% end %>
