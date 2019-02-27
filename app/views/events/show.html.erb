@@ -36,7 +36,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-sm-8">
       <div class="event-photos">
         <div class="event-photos-gallery row">
           <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
@@ -58,7 +58,7 @@
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-sm-4">
       <div class="event-owner">
         <h4>Зовет:</h4>
         <p><%= render partial: 'users/user', object: @event.user %></p>
