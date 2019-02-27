@@ -26,7 +26,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
 
-  process resize_to_fill: [800, 800]
+  process resize_to_fill: [1280, 1024]
 
   # process scale: [200, 300]
   #
