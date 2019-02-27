@@ -53,7 +53,7 @@ class User < ApplicationRecord
       name: "Товарисч №#{rand(777)}",
       admin: false
     }
-    super(defaults.merge(attrs))
+    super(defaults.merge(attrs)) unless attrs.nil?
   end
 
   def link_subscriptions

@@ -1,11 +1,11 @@
 <%= simple_form_for [@event, comment] do |f| %>
-  <div class="form-group <%= bootstrap_has_error(comment, :body) %>">
+  <div class="form-group <%= bootstrap_has_error(comment, :body) %>" style="width:65%">
     <%= f.label :body %>
     <%= f.input :body, as: :text, label: false, class: "form-control", autofocus: true,
                 autocomplete: "body", placeholder: "Комментарий" %>
   </div>
 
-  <div class="form-group <%= bootstrap_has_error(comment, :user_name) %>">
+  <div class="form-group <%= bootstrap_has_error(comment, :user_name) %>" style="width:65%">
     <%= f.label :user_name %>
     <%= f.input :user_name, label: false, class: "form-control", autofocus: true,
                 autocomplete: "user_name", placeholder: "Имя" %>
