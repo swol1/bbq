@@ -1,7 +1,9 @@
 <% image_title = "Добавил #{render partial: 'users/user', object: photo.user}" %>
 
-<div class="buffer-both col-sm-3">
-  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url, data: {
-      toggle: 'lightbox', title: image_title, gallery: 'event-photos', type: 'image'
-  } %>
+<div class="buffer-both">
+  <%= link_to image_tag(photo.photo.thumb.url, class: "img-fluid"), photo.photo.url,
+              class: "buffer-both col-xs-4 col-sm-3 col-lg-2", data: {
+          toggle: 'lightbox', title: image_title, gallery: 'example-gallery', type: 'image',
+          'max-width' => '1280', 'max-height' => '1024'
+      } %>
 </div>

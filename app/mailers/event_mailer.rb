@@ -20,11 +20,4 @@ class EventMailer < ApplicationMailer
 
     mail to: email, subject: "Добавлена новая фотография @ #{event.title}"
   end
-
-  def registration(user)
-    @name = user.name
-    @email = user.email
-
-    mail to: user.email, subject: "Новая регистрация"
-  end
 end

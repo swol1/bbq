@@ -1,22 +1,10 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <div class="row">
-    <div class="col-xs-10 col-sm-6 col-md-5 col-xs-offset-1 col-sm-offset-4">
+    <div class="col-xs-10 col-sm-6 col-md-5 col-lg-4 col-xs-offset-1 col-sm-offset-4">
 
       <div class="row">
         <div class="col-xs-10 margin-bottom-25">
           <h2 class="text-center">Регистрация</h2>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-10">
-          <% if @user.errors.any? %>
-            <div class="alert alert-danger">
-              <div class="lead buffer-bottom">
-                В вашей форме <%= I18n.t :error, count: @user.errors.count %>
-              </div>
-            </div>
-          <% end %>
         </div>
       </div>
 
@@ -77,9 +65,9 @@
       <div class="row">
         <div class="col-xs-10">
           <%- resource_class.omniauth_providers.each do |provider| %>
-            <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %>
+            <%= link_to "Войти через #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %>
             <br/>
-          <% end -%>
+          <% end %>
         </div>
       </div>
     </div>

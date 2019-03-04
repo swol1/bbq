@@ -3,14 +3,14 @@
   color: white;
   overflow: hidden;
   margin-bottom: 20px;
-  min-height: 400px;
+  min-height: 350px;
 }
 
 .event-background {
   position: absolute;
   width: 100%;
   z-index: -1;
-  min-height: 400px;
+  min-height: 350px;
 
   top: 0; bottom: 0;
   left: 0; right: 0;
@@ -50,5 +50,5 @@
 .event-map {
   margin: 20px 0;
   width: 100%;
-  height: 400px;
+  height: 350px;
 }

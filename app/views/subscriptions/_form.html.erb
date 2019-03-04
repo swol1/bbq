@@ -1,19 +1,19 @@
-<%= form_for [@event, subscription] do |f| %>
-    <%= render partial: 'partials/form_errors', locals: {model: subscription} %>
-
-    <% unless user_signed_in? %>
-        <div class="form-group">
-          <%= f.label :user_name %>
-          <%= f.text_field :user_name, class: 'form-control' %>
-        </div>
-
-        <div class="form-group">
-          <%= f.label :user_email %>
-          <%= f.text_field :user_email, class: 'form-control' %>
-        </div>
-    <% end %>
-
-    <div class="actions">
-      <%= f.submit 'Подписаться', class: 'btn btn-primary' %>
+<%= simple_form_for [@event, subscription] do |f| %>
+  <% unless user_signed_in? %>
+    <div class="form-group <%= bootstrap_has_error(subscription, :user_name) %>">
+      <%= f.label :user_name %>
+      <%= f.input :user_name, label: false, class: "form-control", autofocus: true,
+                  autocomplete: "user_name", placeholder: "Имя" %>
     </div>
+
+    <div class="form-group <%= bootstrap_has_error(subscription, :user_email) %>">
+      <%= f.label :user_email %>
+      <%= f.input :user_email, label: false, class: "form-control", autofocus: true,
+                  autocomplete: "user_email", placeholder: "Email" %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit 'Подписаться', class: 'btn btn-primary' %>
+  </div>
 <% end %>
